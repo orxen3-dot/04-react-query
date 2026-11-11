@@ -1,78 +1,138 @@
-# React + TypeScript + Vite
+# 🎬 Movie Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A movie search application built with **React, TypeScript, and TanStack Query**. The application allows users to search for movies using The Movie Database (TMDB) API, browse search results, navigate through pages, and view detailed movie information.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [04-react-query](https://04-react-query-ebon-pi-45.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Repository:** [GitHub](https://github.com/orxen3-dot/04-react-query)
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Movie Search** – Search for movies by title using the TMDB API.
+- **Server State Management** – Fetch and manage server data with TanStack Query.
+- **Pagination** – Navigate through movie search results.
+- **Movie Details Modal** – View movie information, including overview, release date, rating, and backdrop image.
+- **Loading States** – Display loading indicators while fetching data.
+- **Error Handling** – Provide feedback when API requests fail.
+- **Empty Search Results** – Notify users when no movies match their search.
+- **Toast Notifications** – Display interactive notifications using React Hot Toast.
+- **React Query Devtools** – Inspect queries and monitor server state during development.
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+| Technology | Purpose |
+|---|---|
+| React 19 | Building the user interface |
+| TypeScript | Static typing |
+| TanStack Query v5 | Server state management and data fetching |
+| Axios | HTTP requests |
+| React Paginate | Pagination |
+| React Hot Toast | Toast notifications |
+| CSS Modules | Component-level styling |
+| Vite | Development environment and build tool |
+| TMDB API | Movie data and images |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js
+- npm
+- TMDB API access token
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
 
+1. Clone the repository:
+
+```bash
+git clone https://github.com/orxen3-dot/04-react-query.git
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+2. Navigate to the project directory:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd 04-react-query
 ```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Create a `.env` file in the root directory:
+
+```env
+VITE_TMDB_TOKEN=your_tmdb_api_token
+```
+
+5. Start the development server:
+
+```bash
+npm run dev
+```
+
+## 🔑 API Configuration
+
+This project uses the [TMDB API](https://developer.themoviedb.org/docs).
+
+To run the application, you need a TMDB API Read Access Token.
+
+Add your token to the `.env` file as `VITE_TMDB_TOKEN`.
+
+**Important:** Never commit your actual API token to a public repository. Keep your `.env` file in `.gitignore`.
+
+## 📁 Project Structure
+
+```text
+src/
+├── components/
+│   ├── App/
+│   ├── SearchBar/
+│   ├── MovieGrid/
+│   ├── MovieModal/
+│   ├── Loader/
+│   └── ErrorMessage/
+│
+├── services/
+│   └── movieService.ts
+│
+├── types/
+│   └── movie.ts
+│
+└── main.tsx
+```
+
+## 🧠 Key Concepts Practiced
+
+- React component architecture
+- TypeScript interfaces and type definitions
+- TanStack Query and server state management
+- Query keys and automatic cache management
+- Asynchronous JavaScript (`async/await`)
+- REST API integration
+- HTTP requests with Axios
+- Pagination and dynamic data fetching
+- React Hooks (`useState`, `useEffect`)
+- Conditional rendering
+- React Portals
+- Environment variables
+- Error and loading state management
+
+## 👨‍💻 Author
+
+**Hryhorii Shalashnyi**
+
+Fullstack Developer
+
+- GitHub: [@orxen3-dot](https://github.com/orxen3-dot)
+
+---
+
+*This project was developed as part of my Fullstack Development learning journey at GoIT.*
+
+## 📄 Credits
+
+Movie data and images are provided by [The Movie Database (TMDB)](https://www.themoviedb.org/).
+
+This project is not endorsed or certified by TMDB.
